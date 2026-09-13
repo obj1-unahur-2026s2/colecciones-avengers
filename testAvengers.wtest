@@ -1,0 +1,11 @@
+import avengers.avengers
+import thanos.thanos
+import heroes.*
+
+describe "Tests Avengers y el Chasquido de Thanos" {
+
+    test "test ejemplo" {
+        assert.that(true)
+    }
+
+}
