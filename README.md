@@ -34,7 +34,11 @@ Los héroes tienen distintas características que determinan su poder de combate
 
 Al comenzar la historia, todos los héroes forman parte de los Avengers: ironman, blackwidow, hulk (como Bruce Banner) y drStrange (en ese orden). En ese estado, el equipo no tiene suficiente poder para derrotar a Thanos y si le preguntamos puedeDerrotarAThanos() devuelve falso.
 
-Thanos también sabe *hacerElChasquido()* lo que provoca que desaparezca drStrange y deje de formar parte de los héroes de avengers y el equipo queda todavía más debilitado. Y también deja de extrañar Titan como de describe más arriba.
+Thanos posee el poder del chasquido, un acto devastador que lo transforma todo. 
+Cuando ejecuta `hacerElChasquido()`, Dr. Strange es eliminado del universo (junto con el 50% del resto de los seres) y como consecuencia desaparece del equipo de los Avengers. 
+El equipo pierde a uno de sus miembros más poderosos, debilitándose significativamente en su capacidad de combate.
+
+Además, al hacer el chasquido, Thanos logra su objetivo final y deja de extrañar a Titán, su antiguo hogar, transformando su estado emocional completamente.
 
 Hulk también sabe revertirElChasquido(), pero hay una condición particular: solo puede hacerlo cuando está como Bruce Banner. Si intenta hacerlo estando transformado en Hulk, no sucede nada. Cuando lo realiza correctamente, Dr. Strange vuelve a formar parte de los Avengers si había sido borrado.
 
@@ -116,49 +120,38 @@ Agregar nuevos héroes **no debería requerir modificar la lógica de avengers n
 
 La solución debe modelar el comportamiento del dominio y nada más.
 
+Pueden definir métodos privados, auxiliares o con nombres personalizados según su diseño, siempre que respeten los nombres obligatorios para la autocorrección.
 
-### Glosario de nombres de objeto y mensajes obligatorios
+## Glosario de Nombres Obligatorios (Únicamente para Autocorrección)
 
-**Objetos**
-- avengers
-- blackWidow
-- drStrange
-- hulk
-- ironMan
-- thanos
- 
+**Estos son los ÚNICOS nombres de métodos y objetos que están obligados a usar exactamente como aparecen aquí, porque son los que utilizan los tests de autocorrección.**
 
-**Mensajes**
-agregarHeroe
-agregarVariosHeroes
-atacarAThanos
-cambiarABruce
-cambiarAHulk
-cantidadDeHeroes
-cantidadDeHeroesConPoderMayorA
-desaparecerATodos
-estaPresente
-hacerElChasquido
-hayUnHeroeConPoderEntre
-heroeConMayorPoder
-heroeConMenorPoder
-heroesConMenosPoderQue
-listaDeNombresDeHeroes
-morir
-nombre
-noHayHeroes
-ordenarHeroesDeMayorAMenorPoder
-perderBatalla
-poderDeCombate
-poderDeCombateDe
-poderTotal
-primerHeroe
-promedioDePoderesDeHeroes
-puedeDerrotarAThanos
-quitarHeroe
-quitarVariosHeroes
-revertirElChasquido
-talgico
-todosLosHeroesTienenComoMinimoPoder
-ultimoHeroe
-unHeroeAlAzar
+### Objetos (Obligatorios)
+```
+avengers
+blackWidow
+drStrange
+hulk
+ironMan
+thanos
+```
+
+### Métodos (Obligatorios)
+```
+  - atacarAThanos
+  - cambiarABruce
+  - cambiarAHulk
+  - cantidadDeHeroes
+  - estaPresente
+  - hacerElChasquido
+  - noHayHeroes
+  - poderDeCombate
+  - poderTotal
+  - puedeDerrotarAThanos
+  - revertirElChasquido
+  - talgico
+```
+
+**Nota importante:** El resto de la funcionalidad (cómo se agregan/quitan héroes, cómo se aplican las consecuencias de batalla, cómo cambia los estados internos de los objetos, ordenamientos, filtros, promedios, etc.) pueden implementarla con libertad de nombres de métodos, respetando polimorfismo y buen uso de colecciones.
+
+---
